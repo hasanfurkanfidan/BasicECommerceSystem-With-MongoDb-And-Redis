@@ -27,7 +27,7 @@ namespace Business.Concrete
             if (basketCreateOrUpdateDto == null)
                 return new ErrorResult(Messages.InvalidParameter);
 
-            if (basketCreateOrUpdateDto.Count <= 0)
+            if (basketCreateOrUpdateDto.Count < 1)
                 return new ErrorResult(Messages.InValidCount);
 
             var existProduct = await _productRepository.GetById(basketCreateOrUpdateDto.ProductId);

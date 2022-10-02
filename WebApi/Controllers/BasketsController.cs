@@ -12,7 +12,7 @@ namespace WebApi.Controllers
             _basketService = basketService;
         }
 
-        [HttpPost("create-or-update")]
+        [HttpPost]
         public async Task<IActionResult> CreateOrUpdate(BasketCreateOrUpdateDto basketCreateOrUpdateDto)
         {
             return GetResponseOnlyResult(await _basketService.AddToBasket(basketCreateOrUpdateDto));
